@@ -1,0 +1,39 @@
+<!--
+  Generated template for the LoginPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>  
+  <ion-navbar>
+    <ion-title>PayPhone Api Token</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+  <form [formGroup]="tokenForm" (submit)="submitForm($event, tokenForm.value)">
+    <ion-list>   
+      <ion-item>
+        <ion-label floating>Client id</ion-label>
+        <ion-input type="text" formControlName="clientId"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>Client secret</ion-label>
+        <ion-input type="password" formControlName="secret"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>Ruc</ion-label>
+        <ion-input type="text" formControlName="ruc"></ion-input>
+      </ion-item>
+
+    </ion-list>
+    <p>
+      <button ion-button color="primary" type="submit" block>Sign In</button>
+    </p>
+    <p>
+      <button ion-button color="light" block (click)="scanKeys()">Scan Keys</button>
+    </p>
+  </form>
+
+</ion-content>

@@ -1,0 +1,11 @@
+<div class="container" [ngClass]="{'busy': isBusy}">
+    <div class="backdrop"></div>
+    <div text-center>
+        <ion-spinner></ion-spinner>
+        <br/>
+        <h2>Wait for user accept</h2>
+        
+        <button ion-button color="danger" (click)="cancel(id)" small>Cancel</button>
+    </div>
+    
+</div>

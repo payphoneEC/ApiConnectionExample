@@ -1,0 +1,8 @@
+{
+  "name": "PayPhone.Api.Client",
+  "app_id": "",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}

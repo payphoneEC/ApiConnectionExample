@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      Sale List
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  <ion-list>
+    <ion-item *ngFor="let item of saleList" (click)="details(item.transactionId)">
+      <ion-icon name="card" item-start></ion-icon>
+      <h2>{{item.email == null ? 'example@email.com' : item.email}}</h2>
+      <p>{{item.phoneNumber == null ? 'Phone Number' : item.phoneNumber}}</p>
+      <p>{{item.authorizationCode == null ? 'Authorized code' : item.authorizationCode}}</p>
+      <p>{{item.transactionId == null ? 'Sale id' : item.transactionId}}</p>
+      <ion-note item-end>
+        {{item.transactionStatus == null ? 'Sale Status' : item.transactionStatus}}
+        <br/> ${{item.amount == null ? '0.00' : (item.amount/100).toFixed(2)}}
+      </ion-note>
+    </ion-item>
+  </ion-list>
+  <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+    <ion-infinite-scroll-content></ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+
+</ion-content>
